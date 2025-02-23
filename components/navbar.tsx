@@ -34,6 +34,36 @@ export default function Navbar() {
             Recursos
           </Link>
           <Link
+            href="#cta"
+            className="text-sm font-medium hover:text-primary"
+            onClick={(e) => {
+              e.preventDefault()
+              document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" })
+            }}
+          >
+            Contribua
+          </Link>
+          <Link
+            href="#forums"
+            className="text-sm font-medium hover:text-primary"
+            onClick={(e) => {
+              e.preventDefault()
+              document.querySelector("#forums")?.scrollIntoView({ behavior: "smooth" })
+            }}
+          >
+            Fóruns
+          </Link>
+          <Link
+            href="#platform-showcase"
+            className="text-sm font-medium hover:text-primary"
+            onClick={(e) => {
+              e.preventDefault()
+              document.querySelector("#platform-showcase")?.scrollIntoView({ behavior: "smooth" })
+            }}
+          >
+            Plataforma
+          </Link>
+          <Link
             href="#newsletter"
             className="text-sm font-medium hover:text-primary"
             onClick={(e) => {

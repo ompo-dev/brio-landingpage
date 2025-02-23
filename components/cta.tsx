@@ -4,7 +4,7 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 
 export default function CTA() {
   return (
-    <section className="border-t">
+    <section id="cta" className="border-t">
       <div className="container flex flex-col items-center gap-4 py-24 text-center sm:py-32">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
           Pronto para Juntar-se à Revolução do Conhecimento?
@@ -15,6 +15,7 @@ export default function CTA() {
         <InteractiveHoverButton
           className="mt-4"
           onClick={() => window.open('https://github.com/brio-plataform', '_blank')}
+          aria-label="Contribua no GitHub"
         >
           Contribua no GitHub
         </InteractiveHoverButton>

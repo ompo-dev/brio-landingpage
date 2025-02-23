@@ -33,35 +33,35 @@ const platformAreas = [
         name: "Biblioteca Digital",
         isSelectable: true,
         description: "Acesse uma vasta coleção de recursos acadêmicos, artigos e materiais de estudo.",
-        image: "/images/feed-brio.png"
+        image: "/images/book-brio.png"
       },
       {
         id: "6",
         name: "Criar",
         isSelectable: true,
         description: "Crie e compartilhe conteúdo acadêmico com ferramentas intuitivas e sistema de versionamento integrado.",
-        image: "/images/feed-brio.png"
+        image: "/images/project-brio.png"
       },
       {
         id: "8",
         name: "Buscar",
         isSelectable: true,
         description: "Pesquise e encontre facilmente o conteúdo acadêmico que você precisa.",
-        image: "/images/feed-brio.png"
+        image: "/images/search-brio.png"
       },
       {
         id: "10",
         name: "Fóruns",
         isSelectable: true,
         description: "Participe de debates construtivos e troque conhecimento com outros pesquisadores e estudantes.",
-        image: "/images/feed-brio.png"
+        image: "/images/forum-brio.png"
       },
       {
         id: "12",
         name: "IA",
         isSelectable: true,
         description: "Utilize recursos avançados de inteligência artificial para aprimorar sua experiência de aprendizado.",
-        image: "/images/feed-brio.png"
+        image: "/images/ai-brio.png"
       }
     ]
   }
@@ -81,7 +81,7 @@ export default function PlatformShowcase() {
   };
 
   return (
-    <section className="container py-24 space-y-8">
+    <section className="container py-24 space-y-8" id="platform-showcase">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Explore Nossa Plataforma</h2>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">

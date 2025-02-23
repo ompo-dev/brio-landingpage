@@ -28,6 +28,21 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#cta" className="text-muted-foreground hover:text-primary">
+                  Contribua
+                </Link>
+              </li>
+              <li>
+                <Link href="#forums" className="text-muted-foreground hover:text-primary">
+                  Fóruns
+                </Link>
+              </li>
+              <li>
+                <Link href="#platform-showcase" className="text-muted-foreground hover:text-primary">
+                  Plataforma
+                </Link>
+              </li>
+              <li>
                 <Link href="#newsletter" className="text-muted-foreground hover:text-primary">
                   Lista de Espera
                 </Link>
@@ -37,7 +52,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-medium">Redes Sociais</h3>
             <div className="flex space-x-4">
-              <Link href="https://github.com/brio-plataform/Brio" className="text-muted-foreground hover:text-primary">
+              <Link href="#cta" className="text-muted-foreground hover:text-primary">
                 <Github className="h-5 w-5" />
               </Link>
               <Link href="https://www.linkedin.com/in/dev-maicon/" className="text-muted-foreground hover:text-primary">
