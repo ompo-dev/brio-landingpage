@@ -4,15 +4,22 @@ import React from "react";
 export function TreeBrio({ onSelect }: { onSelect?: (id: string) => void }) {
   const handleFileSelect = (event: React.SyntheticEvent, value?: string) => {
     const selectedValue = value || (event.currentTarget as HTMLElement).getAttribute('value') || '';
-    console.log('TreeBrio - File Selected:', selectedValue);
+    console.log('TreeBrio - File Selected:', selectedValue); // Debug log
     
     const selectedElement = findElementById(ELEMENTS, selectedValue);
     if (selectedElement) {
-      console.log('TreeBrio - Element Found:', selectedElement);
+      console.log('TreeBrio - Element Found:', selectedElement); // Debug log
       
-      // Always select the file/folder that was clicked, not its parent
-      console.log('TreeBrio - Selecting:', selectedValue);
-      onSelect?.(selectedValue);
+      const parentId = findParentId(ELEMENTS, selectedValue);
+      console.log('TreeBrio - Parent ID:', parentId); // Debug log
+      
+      if (parentId) {
+        console.log('TreeBrio - Selecting Parent:', parentId); // Debug log
+        onSelect?.(parentId);
+      } else {
+        console.log('TreeBrio - Selecting Self:', selectedValue); // Debug log
+        onSelect?.(selectedValue);
+      }
     }
   };
 
@@ -73,56 +80,19 @@ export function TreeBrio({ onSelect }: { onSelect?: (id: string) => void }) {
               <p>{ELEMENTS[0]?.children?.[1]?.children?.[0]?.name}</p>
             </File>
           </Folder>
-          <Folder 
-            element={ELEMENTS[0]?.children?.[2]?.name} 
-            value={ELEMENTS[0]?.children?.[2]?.id} 
-            isSelectable={ELEMENTS[0]?.children?.[2]?.isSelectable}
-          >
-            <File 
-              value="6" 
-              isSelectable={true} 
-              onSelect={(e) => handleFileSelect(e, "6")}
-            >
+          <Folder element={ELEMENTS[0]?.children?.[2]?.name} value={ELEMENTS[0]?.children?.[2]?.id} isSelectable={ELEMENTS[0]?.children?.[2]?.isSelectable}>
+            <File value="6" isSelectable={true} onSelect={(e) => handleFileSelect(e, "6")}>
               <p>{ELEMENTS[0]?.children?.[2]?.children?.[0]?.name}</p>
             </File>
           </Folder>
-          <Folder 
-            element={ELEMENTS[0]?.children?.[3]?.name} 
-            value={ELEMENTS[0]?.children?.[3]?.id} 
-            isSelectable={ELEMENTS[0]?.children?.[3]?.isSelectable}
-          >
-            <File 
-              value="8" 
-              isSelectable={true} 
-              onSelect={(e) => handleFileSelect(e, "8")}
-            >
+          <Folder element={ELEMENTS[0]?.children?.[3]?.name} value={ELEMENTS[0]?.children?.[3]?.id} isSelectable={ELEMENTS[0]?.children?.[3]?.isSelectable}>
+            <File value="8" isSelectable={true} onSelect={(e) => handleFileSelect(e, "8")}>
               <p>{ELEMENTS[0]?.children?.[3]?.children?.[0]?.name}</p>
             </File>
           </Folder>
-          <Folder 
-            element={ELEMENTS[0]?.children?.[4]?.name} 
-            value={ELEMENTS[0]?.children?.[4]?.id} 
-            isSelectable={ELEMENTS[0]?.children?.[4]?.isSelectable}
-          >
-            <File 
-              value="10" 
-              isSelectable={true} 
-              onSelect={(e) => handleFileSelect(e, "10")}
-            >
+          <Folder element={ELEMENTS[0]?.children?.[4]?.name} value={ELEMENTS[0]?.children?.[4]?.id} isSelectable={ELEMENTS[0]?.children?.[4]?.isSelectable}>
+            <File value="10" isSelectable={true} onSelect={(e) => handleFileSelect(e, "10")}>
               <p>{ELEMENTS[0]?.children?.[4]?.children?.[0]?.name}</p>
-            </File>
-          </Folder>
-          <Folder 
-            element={ELEMENTS[0]?.children?.[5]?.name} 
-            value={ELEMENTS[0]?.children?.[5]?.id} 
-            isSelectable={ELEMENTS[0]?.children?.[5]?.isSelectable}
-          >
-            <File 
-              value="12" 
-              isSelectable={true} 
-              onSelect={(e) => handleFileSelect(e, "12")}
-            >
-              <p>{ELEMENTS[0]?.children?.[5]?.children?.[0]?.name}</p>
             </File>
           </Folder>
         </Folder>
@@ -140,72 +110,54 @@ const ELEMENTS = [
       {
         id: "2",
         isSelectable: true,
+        name: "index.ts",
+        description: "Platform overview and documentation for Brio's visual structure"
+      },
+      {
+        id: "3",
+        isSelectable: true,
         name: "feed",
         children: [
           {
-            id: "3",
+            id: "4",
             isSelectable: true,
             name: "feed.tsx"
           }
         ]
       },
       {
-        id: "4",
-        isSelectable: true,
-        name: "library",
-        children: [
-          {
-            id: "5",
-            isSelectable: true,
-            name: "library.tsx"
-          }
-        ]
-      },
-      {
-        id: "6",
-        isSelectable: true,
-        name: "create",
-        children: [
-          {
-            id: "7",
-            isSelectable: true,
-            name: "create.tsx"
-          }
-        ]
-      },
-      {
-        id: "8",
+        id: "5",
         isSelectable: true,
         name: "search",
         children: [
           {
-            id: "9",
+            id: "6",
             isSelectable: true,
             name: "search.tsx"
           }
         ]
       },
       {
-        id: "10",
+        id: "7",
         isSelectable: true,
-        name: "forums",
+        name: "create",
         children: [
           {
-            id: "11",
+            id: "8",
             isSelectable: true,
-            name: "forums.tsx"
+            name: "create.tsx"
           }
         ]
       },
       {
-        id: "12",
+        id: "9",
         isSelectable: true,
-        name: "AI",
+        name: "book",
         children: [
           {
-            id: "13",
+            id: "10",
             isSelectable: true,
-            name: "ai.tsx"
+            name: "book.tsx"
           }
         ]
       }

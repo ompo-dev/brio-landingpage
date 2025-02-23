@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/Icon.svg" alt="Brio" className="h-6 w-6 invert" />
-          <AuroraText className="text-2xl font-bold">Brio</AuroraText>
+          <span className="text-2xl font-bold">Brio</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           <Link
