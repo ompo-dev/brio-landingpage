@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-medium">Redes Sociais</h3>
             <div className="flex space-x-4">
-              <Link href="https://github.com/brio-edu/Brio" className="text-muted-foreground hover:text-primary">
+              <Link href="https://github.com/brio-plataform/Brio" className="text-muted-foreground hover:text-primary">
                 <Github className="h-5 w-5" />
               </Link>
               <Link href="https://www.linkedin.com/in/dev-maicon/" className="text-muted-foreground hover:text-primary">

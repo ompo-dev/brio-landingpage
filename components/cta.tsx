@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button"
 
 export default function CTA() {
   return (
@@ -12,11 +12,12 @@ export default function CTA() {
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           Comece a contribuir hoje com a plataforma de conhecimento colaborativo.
         </p>
-        <Button size="lg" className="mt-4" onClick={() => {
-          document.querySelector("#newsletter")?.scrollIntoView({ behavior: "smooth" })
-        }}>
-          Comece Gratuitamente
-        </Button>
+        <InteractiveHoverButton
+          className="mt-4"
+          onClick={() => window.open('https://github.com/brio-plataform', '_blank')}
+        >
+          Contribua no GitHub
+        </InteractiveHoverButton>
       </div>
     </section>
   )

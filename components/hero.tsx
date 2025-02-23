@@ -2,18 +2,22 @@
 
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { AnimatedGradientText } from "./magicui/animated-gradient-text";
 
 export default function Hero() {
   return (
     <section className="container py-24 space-y-12 md:py-32">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div className="rounded-full bg-muted px-3 py-1 text-sm leading-6 text-muted-foreground">
+        <div className=" text-sm leading-6 text-muted-foreground">
+        <AnimatedGradientText>
           Em desenvolvimento - Lançamento previsto para 2026
+        </AnimatedGradientText>
         </div>
         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
           A Plataforma de
           <br className="hidden sm:inline" />
-          <span className="text-primary"> Conhecimento Colaborativo</span>
+          <span className="text-primary"> <AuroraText>Conhecimento Colaborativo</AuroraText></span>
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           Junte-se a nós na construção do futuro do conhecimento compartilhado. Uma plataforma onde ideias evoluem e o
