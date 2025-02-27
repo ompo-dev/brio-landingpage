@@ -4,22 +4,12 @@ import React from "react";
 export function TreeBrio({ onSelect }: { onSelect?: (id: string) => void }) {
   const handleFileSelect = (event: React.SyntheticEvent, value?: string) => {
     const selectedValue = value || (event.currentTarget as HTMLElement).getAttribute('value') || '';
-    console.log('TreeBrio - File Selected:', selectedValue); // Debug log
+    console.log('TreeBrio - File Selected:', selectedValue);
     
     const selectedElement = findElementById(ELEMENTS, selectedValue);
     if (selectedElement) {
-      console.log('TreeBrio - Element Found:', selectedElement); // Debug log
-      
-      const parentId = findParentId(ELEMENTS, selectedValue);
-      console.log('TreeBrio - Parent ID:', parentId); // Debug log
-      
-      if (parentId) {
-        console.log('TreeBrio - Selecting Parent:', parentId); // Debug log
-        onSelect?.(parentId);
-      } else {
-        console.log('TreeBrio - Selecting Self:', selectedValue); // Debug log
-        onSelect?.(selectedValue);
-      }
+      console.log('TreeBrio - Element Found:', selectedElement);
+      onSelect?.(selectedValue);
     }
   };
 

@@ -71,8 +71,16 @@ export default function PlatformShowcase() {
   const [selectedArea, setSelectedArea] = React.useState<PlatformArea>(platformAreas[0].children[0]);
 
   const handleSelect = (id: string) => {
-    // Convert TreeBrio's file IDs to platformAreas IDs
-    const platformId = id === "1" ? "platform" : id;
+    // Map the TreeBrio IDs to platformAreas IDs
+    const idMapping: { [key: string]: string } = {
+      "2": "2",  // index.ts -> Feed
+      "4": "4",  // feed.tsx -> Biblioteca Digital
+      "6": "6",  // search.tsx -> Criar
+      "8": "8",  // create.tsx -> Buscar
+      "10": "10" // book.tsx -> Fóruns
+    };
+
+    const platformId = idMapping[id] || id;
     const area = platformAreas[0].children.find(area => area.id === platformId);
     if (area) {
       console.log('PlatformShowcase - Updating selected area:', area);

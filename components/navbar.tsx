@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { AuroraText } from "./magicui/aurora-text"
 
 export default function Navbar() {
   return (
